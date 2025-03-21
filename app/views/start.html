@@ -1,105 +1,57 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
-{% endblock %}
-
-{% block beforeContent %}
-
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "#"
-      },
-      {
-        text: "Section",
-        href: "#"
-      },
-      {
-        text: "Subsection"
-      }
-    ]
-  }) }}
-
-{% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        {{ serviceName }}
-      </h1>
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }}
+    </h1>
 
-      <p>Use this service to:</p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>do something</li>
-        <li>update your name, address or other details</li>
-        <li>do something else</li>
-      </ul>
+    <p class="govuk-body-l">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat.</p>
 
-      <p>Registering takes around 5 minutes.</p>
+    <p class="govuk-body">Use this service to:</p>
 
-      {{ govukButton({
-        text: "Start now",
-        href: "question",
-        isStartButton: true
-      }) }}
+    <ul class="govuk-list govuk-list--bullet">
+      <li>book flights to one of our space travel destinations</li>
+    </ul>
 
-      <h2 class="govuk-heading-m">
-        Before you start
-      </h2>
+    <!--<p>Registering takes around 5 minutes.</p>-->
 
-      <p>
-        You can also <a href="#">register by post</a>.
-      </p>
+    <br>
 
-      <p>
-        The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
-      </p>
+    {{ govukButton({
+    text: "Start now",
+    href: "question",
+    isStartButton: true
+    }) }}
 
-      <p>
-        You can’t register for this service if you’re in the UK illegally.
-      </p>
+    <!--<h2 class="govuk-heading-m">
+      Before you start
+    </h2>
 
-    </div>
+    <p>
+      You can also <a href="#">register by post</a>.
+    </p>
 
-    <div class="govuk-grid-column-one-third">
+    <p>
+      The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
+    </p>
 
-      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Subsection
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#" class="govuk-!-font-weight-bold">
-                More <span class="govuk-visually-hidden">in Subsection</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
+    <p>
+      You can’t register for this service if you’re in the UK illegally.
+    </p>-->
 
-    </div>
   </div>
+</div>
 
 {% endblock %}
