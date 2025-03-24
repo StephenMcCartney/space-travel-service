@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!--<h1 class="govuk-heading-l">
+      What is your address for destination {{data['destination']}}?
+    </h1>-->
+
+    <form class="form" action="/check-answers-moon" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+      name: "address-suggested-moon",
+      value: data['address-suggested-moon'],
+      fieldset: {
+      legend: {
+      text: "What is your address for destination" +" "+data['destination']+"?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      items: [
+      {
+      value: "1 Street, Town",
+      text: "1 Street, Town"
+      },
+      {
+      value: "2 Street, Town",
+      text: "2 Street, Town"
+      },
+      {
+      value: "3 Street, Town",
+      text: "3 Street, Town"
+      },
+      {
+      value: "4 Street, Town",
+      text: "4 Street, Town"
+      }
+      ]
+      }) }}
+
+
+      <p class="govuk-body">
+        <a href="address-moon" class="govuk-link">If the address is not listed you can enter the address manually</a>
+      </p>
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

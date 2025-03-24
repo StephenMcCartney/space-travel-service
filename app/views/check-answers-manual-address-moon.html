@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers before booking your flight
+    </h1>
+
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: {
+    text: "Where would you like to travel to?"
+    },
+    value: {
+    text: data['destination']
+    },
+    actions: {
+    items: [
+    {
+    href: "question",
+    text: "Change",
+    visuallyHiddenText: "Where would you like to travel to?"
+    }
+    ]
+    }
+    }
+    ,
+    {
+    key: {
+    text: "What is your full name?"
+    },
+    value: {
+    text: data['first-name'] + " " + data['last-name']
+    },
+    actions: {
+    items: [
+    {
+    href: "name-moon",
+    text: "Change",
+    visuallyHiddenText: "What is your full name?"
+    }
+    ]
+    }
+    }
+    ,
+    {
+    key: {
+    text: "What is your postcode?"
+    },
+    value: {
+    text: data['postcode-moon']
+    },
+    actions: {
+    items: [
+    {
+    href: "postcode-moon",
+    text: "Change",
+    visuallyHiddenText: "What is your postcode?"
+    }
+    ]
+    }
+    }
+    ,
+    {
+    key: {
+    text: "What is your address?"
+    },
+    value: {
+    text: data['addressLine1'] + ", " + data['addressLine2'] + ", " + data['addressTown'] + ", " + data['addressCounty']
+    },
+    actions: {
+    items: [
+    {
+    href: "address-suggested-moon",
+    text: "Change",
+    visuallyHiddenText: "What is your address?"
+    }
+    ]
+    }
+    }
+    ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Now book your flights
+    </h2>
+
+    <p>
+      By submitting this booking you are confirming that, to the best of your knowledge, the details you are providing
+      are correct.
+    </p>
+
+    <form action="/confirmation" method="post" novalidate>
+
+      {{ govukButton({
+      text: "Book your flights"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

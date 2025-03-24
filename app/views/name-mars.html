@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      What is your full name for destination {{data['destination']}}?
+    </h1>
+
+    <form class="form" action="/postcode-mars" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+      label: {
+      text: "First name"
+      },
+      id: "first-name",
+      name: "first-name",
+      autocomplete: "name",
+      spellcheck: false,
+      value: data['first-name']
+      }) }}
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+      label: {
+      text: "Last name"
+      },
+      id: "last-name",
+      name: "last-name",
+      autocomplete: "name",
+      spellcheck: false,
+      value: data['last-name']
+      }) }}
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
