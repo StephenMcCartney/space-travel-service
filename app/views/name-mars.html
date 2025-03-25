@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+What is your name for destination {{data['destination']}}?
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      What is your full name for destination {{data['destination']}}?
+      What is your name for destination {{data['destination']}}?
     </h1>
 
     <form class="form" action="/postcode-mars" method="post">
@@ -32,7 +32,8 @@ href: "javascript:window.history.back()"
       name: "first-name",
       autocomplete: "name",
       spellcheck: false,
-      value: data['first-name']
+      value: data['first-name'],
+      classes: "govuk-input--width-20"
       }) }}
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -45,7 +46,8 @@ href: "javascript:window.history.back()"
       name: "last-name",
       autocomplete: "name",
       spellcheck: false,
-      value: data['last-name']
+      value: data['last-name'],
+      classes: "govuk-input--width-20"
       }) }}
 
       {{ govukButton({

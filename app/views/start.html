@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+Space travel service
 {% endblock %}
 
 
@@ -15,19 +15,27 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
     </h1>
 
 
-    <p class="govuk-body-l">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat.</p>
+    <h2 class="govuk-heading-m">About the service</h2>
 
-    <p class="govuk-body">Use this service to:</p>
+
+    <p class="govuk-body-l">Embark on an extraordinary journey to the Moon or Mars with our space travel service. Choose
+      your destination and provide your details to start your adventure.</p>
+
+    <h3 class="govuk-heading-m">Choose Your destination:</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Moon</li>
+      <li>Mars</li>
+    </ul>
+
+
+    <h4 class="govuk-heading-m">Use this service to:</h4>
 
     <ul class="govuk-list govuk-list--bullet">
       <li>book flights to one of our space travel destinations</li>
     </ul>
 
-    <!--<p>Registering takes around 5 minutes.</p>-->
-
-    <br>
+    <p class="govuk-body">Please make sure all information is correct before submitting.</p>
 
     {{ govukButton({
     text: "Start now",

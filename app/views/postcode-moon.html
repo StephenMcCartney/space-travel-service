@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+What is your postcode for destination {{data['destination']}}?
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,12 +29,19 @@ href: "javascript:window.history.back()"
         classes: "govuk-input--width-10",
         id: "postcode-moon",
         name: "postcode-moon",
-        value: data['postcode-moon']
+        value: data['postcode-moon'],
+        hint: {
+          text: "For example SW1 6GH"
+        }
       }) }}
 
       {{ govukButton({
       text: "Continue"
       }) }}
+
+      <p class="govuk-body">
+        <a href="address-moon" class="govuk-link">Enter the address manually</a>
+      </p>
 
     </form>
 

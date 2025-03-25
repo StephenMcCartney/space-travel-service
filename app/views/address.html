@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+What is your address for destination" +" "+data['destination']+"?
 {% endblock %}
 
 {% block beforeContent %}
@@ -68,7 +68,7 @@ href: "javascript:window.history.back()"
       name: "addressCounty"
       }) }}
 
-      <!--{{ govukInput({
+      {{ govukInput({
       label: {
       text: "Postcode"
       },
@@ -76,7 +76,7 @@ href: "javascript:window.history.back()"
       id: "address-postcode",
       name: "addressPostcode",
       autocomplete: "postal-code"
-    }) }}-->
+    }) }}
 
       {% endcall %}
 

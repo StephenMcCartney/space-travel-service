@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+Check your answers before booking your flight
 {% endblock %}
 
 {% block beforeContent %}
@@ -41,7 +41,7 @@ href: "javascript:window.history.back()"
     ,
     {
     key: {
-    text: "What is your full name?"
+    text: "What is your name?"
     },
     value: {
     text: data['first-name'] + " " + data['last-name']
@@ -62,7 +62,7 @@ href: "javascript:window.history.back()"
     text: "What is your postcode?"
     },
     value: {
-    text: data['postcode-moon']
+    text: data['addressPostcode']
     },
     actions: {
     items: [
